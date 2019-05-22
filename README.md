@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 简介
+
+### react-redux 项目简单实战
+
 ## Available Scripts
 
 In the project directory, you can run:
