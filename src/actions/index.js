@@ -5,3 +5,16 @@ export const addReminder = (text, dueDate) => {
     dueDate
   };
 };
+
+export const deleteReminder = id => {
+  return {
+    type: "DELETE_REMINDER",
+    id
+  };
+};
+
+export const clearReminders = () => {
+  return {
+    type: "CLEAR_REMINDER"
+  };
+};

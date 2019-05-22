@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-import { addReminder } from "../actions";
+import { addReminder, deleteReminder, clearReminders } from "../actions";
 
 class App extends React.Component {
   state = {
@@ -17,6 +17,15 @@ class App extends React.Component {
     this.props.addReminder(this.state.text, this.state.dueDate);
   };
 
+  deleteClick(id) {
+    // console.log("id ---", id);
+    this.props.deleteReminder(id);
+  }
+
+  clearReminders() {
+    this.props.clearReminders();
+  }
+
   renderReminders() {
     const { reminders } = this.props;
 
@@ -29,6 +38,12 @@ class App extends React.Component {
               <div>
                 <em>{moment(new Date(reminder.dueDate)).fromNow()}</em>
               </div>
+            </div>
+            <div
+              className="list-item delete-button"
+              onClick={() => this.deleteClick(reminder.id)}
+            >
+              &#x2715;
             </div>
           </li>
         ))}
@@ -67,6 +82,12 @@ class App extends React.Component {
           </div>
         </div>
         {this.renderReminders()}
+        <div
+          className="btn btn-danger mt-3"
+          onClick={() => this.clearReminders()}
+        >
+          Clear Reminder
+        </div>
       </div>
     );
   }
@@ -74,7 +95,9 @@ class App extends React.Component {
 
 App.propTypes = {
   reminders: PropTypes.array.isRequired,
-  addReminder: PropTypes.func.isRequired
+  addReminder: PropTypes.func.isRequired,
+  deleteReminder: PropTypes.func.isRequired,
+  clearReminders: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
@@ -86,5 +109,5 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   // action中的addReminder函数
-  { addReminder }
+  { addReminder, deleteReminder, clearReminders }
 )(App);
