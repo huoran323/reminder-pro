@@ -8559,6 +8559,11 @@ setprototypeof@1.1.1:
   resolved "http://r.cnpmjs.org/setprototypeof/download/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha1-fpWsskqpL1iF4KvvW6ExMw1K5oM=
 
+sfcookies@^1.0.2:
+  version "1.0.2"
+  resolved "http://r.cnpmjs.org/sfcookies/download/sfcookies-1.0.2.tgz#e2df7b4d4c9db15965bbab9a9ce72829daff5bb9"
+  integrity sha1-4t97TUydsVllu6uanOcoKdr/W7k=
+
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.11"
   resolved "http://r.cnpmjs.org/sha.js/download/sha.js-2.4.11.tgz#37a5cf0b81ecbc6943de109ba2960d1b26584ae7"
